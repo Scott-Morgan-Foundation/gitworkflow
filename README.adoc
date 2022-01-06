@@ -1,5 +1,14 @@
-= Gitworkflow
-:homepage: https://github.com/rocketraman/gitworkflows
+# Gitworkflow for Scott-Morgan Foundation
+
+The Scott-Morgan Foundation has adopted the gitworkflow branching strategy and workflow from https://github.com/rocketraman/gitworkflow.
+We have made some changes to the branch naming, and the documentation in this fork has been revised to reflect that. If you reference the
+original repository or linked articles, please note the following naming changes (original branch name -> SMF branch name):
+* master -> main
+* maint -> release
+* next -> beta
+* pu -> alpha
+
+# Gitworkflow
 
 The https://git.kernel.org/pub/scm/git/git.git/[git.git] project, responsible for the creation and maintenance of the
 https://git-scm.com/[git] tool itself, uses a powerful workflow I call "gitworkflow", in deference to its creators
@@ -12,18 +21,18 @@ https://hackernoon.com/how-the-creators-of-git-do-branches-e6fcc57270fb[How the 
 
 This repository is meant to be a place in which tools and documentation related to gitworkflow can be created.
 
-== TL;DR
+## TL;DR
 
 * link:./docs/concepts-summary.adoc[Concepts Summary]
 * link:./docs/task-oriented-primer.adoc[Task-Oriented Primer]
 * link:./docs/useful-commands.adoc[Useful Commands]
 
-== Key Advantages
+## Key Advantages
 
 The key advantages gitworkflow over GitFlow and OneFlow all come from treating topics as first-class citizens, not just
 temporary placeholders for unfinished code.
 
-=== Amazing History
+### Amazing History
 
 Gitworkflow presents a history that code historians, and conscientious developers can love. It can easily present both
 summary (e.g. "show me all the topics merged into a release") and highly detailed views (e.g. "show me all the commits
@@ -39,9 +48,9 @@ image:docs/images/integrationhistory.png[Integration History]
 
 (both examples from the git.git repository)
 
-=== Continuous Integration, Done Right
+### Continuous Integration, Done Right
 
-Ever struggled with the decision about when to merge a topic branch to the main branch (`develop` in GitFlow / `master`
+Ever struggled with the decision about when to merge a topic branch to the main branch (`develop` in GitFlow / `main`
 everywhere else)?
 
 With GitFlow and OneFlow, in order to get the benefit of
@@ -63,7 +72,7 @@ The early "continuous integration" of topics before they are "done" allows ident
 different topics early in their development, prompting the right conversations and coordination between devs at the
 right time.
 
-==== Make Your Topics Great
+#### Make Your Topics Great
 
 Gitworkflow allows the alpha and beta-quality integration branches to be rewound and rebuild. This property allows
 topics to be massaged via interactive rebase until they form a series of easily understandable and reviewable chunks of
@@ -72,7 +81,7 @@ CI and user testing. Gitworkflow removes the limitation that a topic branch cann
 been merged for CI and user testing, and especially for alpha-quality topics, this would be expected by most team leads
 and code reviewers, rather than frowned on.
 
-=== Flexibility
+### Flexibility
 
 Sometimes features take longer to develop than expected. Sometimes they don't work well with other work in progress and
 need to be thrown away and a new approach taken. Sometimes everyone thinks they are "done", but they don't test well or
@@ -88,7 +97,7 @@ continuous deployment scenarios as well.
 
 Gitworkflow allows you to define your own stability levels if you wish: add or remove integration branches as necessary.
 
-== Main Insights
+## Main Insights
 
 One key insight that makes gitworkflow work over flows like GitFlow and OneFlow is that: git is smarter than your
 average source control system. Topics don't have to be merged _only into the branch they were started from_, which seems
@@ -110,7 +119,7 @@ The third key insight is that merge commits -- the ability to explicitly join tw
 ability to accomplish all of the above, as well as to continue to track topic history, long after the topic is no longer
 being developed, making code history spelunking great.
 
-== Disadvantages
+## Disadvantages
 
 Gitworkfow is more complicated, and harder to understand than most (probably all) other flows. It requires more
 understanding of git concepts and capabilities. It offers significant powerful capabilities to complex multi-dimensional
@@ -120,24 +129,24 @@ understand. This means that:
 * Gitworkflow should not be used without significant team maturity using, or willingness to learn, git, and
 * Gitworkflow is serious overkill for trivial or one-man projects (but these might be a good place to try it out).
 
-== Interested in Learning More?
+## Interested in Learning More?
 
-=== Documentation
+### Documentation
 
 * link:./docs/concepts-summary.adoc[Concepts Summary]
 * link:./docs/task-oriented-primer.adoc[Task-Oriented Primer]
 * link:./docs/useful-commands.adoc[Useful Commands]
 
-=== Questions?
+### Questions?
 
 Feel free to ask questions about gitworkflow in the https://github.com/rocketraman/gitworkflow/issues[issues] of this
 repository. Please prefix your issue subject with `[Q]`.
 
-=== The Gitworfkow Awesome List
+### The Gitworfkow Awesome List
 
 A curated list of related external articles and documentation.
 
-==== Git.git Documentation
+#### Git.git Documentation
 
 All of the following are git.git resources by the git.git team.
 
@@ -145,11 +154,11 @@ All of the following are git.git resources by the git.git team.
 * "How various branches are used" in git.git https://github.com/git/git/blob/efc912b23335434674bcfda8199077f8dfa5d6f0/MaintNotes#L144[MaintNotes]
 * "The Policy" in git.git https://github.com/git/git/blob/v2.13.0/Documentation/howto/maintain-git.txt#L35[maintain-git.txt]
 
-==== Articles and Blog Posts
+#### Articles and Blog Posts
 
 * https://hackernoon.com/how-the-creators-of-git-do-branches-e6fcc57270fb[How the Creators of Git do Branching] by Raman Gupta
 
-== TODOs
+## TODOs
 
 * Document useful commands with gitworkflow e.g. history spelunking, topic status, etc.
 ** Integrate and document aliases in https://gist.github.com/rocketraman/1fdc93feb30aa00f6f3a9d7d732102a9
